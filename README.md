@@ -57,3 +57,7 @@ v0.1 — `verify` / `audit` / `rollup` / `snapshot` complete and live-tested; `m
 reference edge (other edges = add a `read_`/`write_` per tracker). Media carry (thumbnails/movies) is handled
 by the tracker MCPs' media tools; the migrate reference copies structure + statuses + casting and reports any
 media-coverage gap. MIT.
+
+---
+
+Built by **John Huikku** · [alienrobot.com](https://alienrobot.com)
