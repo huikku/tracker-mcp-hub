@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tracker-mcp-hub — one contract across every production tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Geist+Mono:wght@400..700&family=Instrument+Sans:wght@400..700&display=swap');
+  :root{--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",system-ui,sans-serif;--font-mono:"Geist Mono",ui-monospace,Menlo,monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-body);background:#0e1013;color:#cfd4da;line-height:1.6;
+       background-image:linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:150px 100%}
+  .mono{font-family:var(--font-mono)}
+  .amber{color:#e8973a}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  a{color:#e8973a;text-decoration:none}a:hover{text-decoration:underline}
+
+  header{padding:46px 0 8px;text-align:center}
+  header img{width:100%;max-width:1000px;border-radius:18px;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+
+  .lede{margin:40px auto 8px;max-width:820px;text-align:center;font-size:22px;color:#9aa1a8}
+  .lede b{color:#eee8dd;font-weight:600}
+  .repos{margin:22px 0 8px;text-align:center}
+  .repos .r{display:inline-block;margin:5px;font-size:15px;font-weight:700;color:#dfe4e9;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10)}
+
+  h2{font-family:var(--font-mono);margin:64px 0 6px;font-size:14px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#6c737a}
+  h2 + .h2sub{font-family:var(--font-display);font-size:31px;font-weight:700;color:#f1ece2;letter-spacing:-.6px;margin-bottom:26px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.035);padding:26px 26px}
+  .card .k{font-family:var(--font-mono);font-weight:700;font-size:20px;color:#e8973a}
+  .card .d{margin-top:9px;font-size:17px;color:#9aa1a8}
+  .card.span{grid-column:1 / -1}
+
+  pre{margin-top:10px;background:#0a0c0f;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px 24px;
+      overflow:auto;font-family:var(--font-mono);font-size:14.5px;line-height:1.7;color:#9aa1a8}
+  pre b{color:#e8973a;font-weight:700} pre .g{color:#57c1cb} pre .dim{color:#5c636b}
+
+  .flowbox{border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03);
+           padding:30px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+  .stack{display:flex;flex-direction:column;gap:8px}
+  .pill{font-size:16px;font-weight:700;color:#dfe4e9;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);text-align:center;min-width:120px}
+  .arrow{color:#5c636b;font-size:26px}
+  .hubp{font-family:var(--font-mono);font-weight:700;color:#1b1205;background:linear-gradient(180deg,#eaa64a,#e2883a);padding:14px 20px;border-radius:12px;box-shadow:0 14px 34px rgba(232,151,58,.28)}
+  .caps{display:flex;flex-direction:column;gap:8px}
+
+  footer{margin:74px 0 50px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  footer .src{font-size:15px;color:#737a81}footer .src b{color:#cdd3d9}
+  .brand .name{font-size:22px;font-weight:800;color:#f1ece2;text-align:right}
+  .brand .tag{margin-top:5px;font-size:13px;letter-spacing:4px;color:#737a81;text-align:right}
+</style></head>
+<body>
+<header><div class="wrap"><img src="hero.png" alt="tracker-mcp-hub — one contract across every production tracker"></div></header>
+
+<div class="wrap">
+  <p class="lede"><b>tracker-mcp-hub</b> is a tracker-agnostic production-data layer. Each tracker MCP emits the
+    <b>same normalized snapshot</b>, and the hub turns that one contract into things no single tracker can do —
+    <b>verify, migrate, audit, snapshot and roll up</b> across ShotGrid, ftrack and Kitsu interchangeably.</p>
+  <div class="repos">
+    <a class="r" href="https://github.com/huikku/shotgrid-mcp">shotgrid-mcp</a>
+    <a class="r" href="https://github.com/huikku/ftrack-mcp">ftrack-mcp</a>
+    <a class="r" href="https://github.com/huikku/kitsu-mcp">kitsu-mcp</a>
+  </div>
+
+  <h2>Capabilities</h2>
+  <div class="h2sub">Five tools over one normalized contract</div>
+  <div class="grid">
+    <div class="card"><div class="k">verify</div><div class="d">Diff two project snapshots → a report: count deltas, missing/extra entities, casting &amp; per-task status mismatches, coverage — and a <span class="amber">match / discrepancies</span> verdict.</div></div>
+    <div class="card"><div class="k">migrate</div><div class="d">Orchestrated copy: <b>read → write → verify</b>. Every run ends with proof. Preflight before, an automatic verify report after.</div></div>
+    <div class="card"><div class="k">audit</div><div class="d">Verify one source-of-truth against many mirror copies → a drift report. Ideal on a schedule: <em>are my mirrors still faithful?</em></div></div>
+    <div class="card"><div class="k">snapshot</div><div class="d">Wrap a project into a portable, versioned archive (the normalized model + a media manifest) — restorable to any tracker.</div></div>
+    <div class="card span"><div class="k">rollup</div><div class="d">Aggregate many projects into totals, a status distribution and coverage — a “state of all productions” dashboard, across trackers.</div></div>
+  </div>
+
+  <h2>Proven live</h2>
+  <div class="h2sub">Pointed at the same project copied to all three trackers</div>
+  <pre><span class="dim"># audit: ShotGrid (source of truth)  vs  its mirror copies</span>
+<span class="g">kitsu</span>  copy   tasks <b>&minus;53</b>
+<span class="g">ftrack</span> copy   tasks <b>&minus;8</b>  ·  status mismatches <b>615</b>  ·  casting mismatches <b>357</b>
+              assets missing <b>1</b> (Farmhouse)  /  extra <b>2</b> (Farmhouse&nbsp;(2), Branch&nbsp;(2))   <span class="dim">&larr; ftrack name-collisions</span>
+
+<span class="dim"># every finding is a documented cross-tracker incompatibility — surfaced automatically.</span>
+<span class="dim"># and an orchestrated migrate of a slice ended with:</span>   VERIFY <b>PASS</b>  <span class="dim">(all counts matched)</span></pre>
+
+  <h2>Architecture</h2>
+  <div class="h2sub">Three standalone MCPs + one hub</div>
+  <div class="flowbox">
+    <div class="stack"><div class="pill">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div></div>
+    <div class="arrow">&rarr;</div>
+    <div class="hubp mono">project_summary</div>
+    <div class="arrow">&rarr;</div>
+    <div class="caps">
+      <div class="hubp mono" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
+    </div>
+  </div>
+  <p style="margin-top:16px;color:#737a81;font-size:16px">Adding a tracker = a new MCP that emits <span class="mono amber">project_summary</span>; every hub tool works on it for free. The hub is mostly pure — <span class="mono">verify&nbsp;/&nbsp;audit&nbsp;/&nbsp;rollup&nbsp;/&nbsp;snapshot</span> need no tracker SDK.</p>
+
+  <footer>
+    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b><br>open source · MIT · built on the tracker-MCP trio</div>
+    <div class="brand"><div class="name">Alienrobot</div><div class="tag mono">VFX · PIPELINE · AI</div></div>
+  </footer>
+</div>
+</body></html>

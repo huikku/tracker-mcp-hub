@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Geist+Mono:wght@400..700&family=Instrument+Sans:wght@400..700&display=swap');
+  :root{--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",system-ui,sans-serif;--font-mono:"Geist Mono",ui-monospace,monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{font-family:var(--font-body);background:#0e1013;color:#f4efe5;overflow:hidden}
+  .mono{font-family:var(--font-mono)}
+  .card{position:relative;width:1200px;height:630px;padding:60px 66px;display:flex;flex-direction:column}
+  .card::before{content:"";position:absolute;inset:0;opacity:.5;background-image:linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:150px 100%}
+  .card::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(680px 420px at 90% -5%,rgba(232,151,58,.13),transparent 60%)}
+  .layer{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
+  .eyebrow{font-size:16px;font-weight:700;letter-spacing:6px;color:#6c737a;text-transform:uppercase}
+  h1{font-family:var(--font-display);margin-top:16px;font-size:66px;line-height:.96;font-weight:800;letter-spacing:-2px;color:#f4efe5}
+  h1 .amber{color:#e8973a}
+  .sub{margin-top:18px;font-size:22px;line-height:1.45;color:#9aa1a8;max-width:880px}
+  .sub b{color:#cdd3d9;font-weight:600}
+  .flow{margin-top:30px;display:flex;align-items:center;gap:18px}
+  .stack{display:flex;flex-direction:column;gap:8px}
+  .pill{font-size:18px;font-weight:700;color:#dfe4e9;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);text-align:center}
+  .arrow{color:#5c636b;font-size:30px}
+  .hub{font-family:var(--font-mono);font-weight:700;font-size:21px;color:#1b1205;background:linear-gradient(180deg,#eaa64a,#e2883a);padding:16px 22px;border-radius:14px;box-shadow:0 18px 40px rgba(232,151,58,.30)}
+  .spacer{flex:1}
+  .chips{display:flex;gap:11px;flex-wrap:wrap}
+  .chip{font-size:18px;font-weight:700;color:#eee8dd;padding:9px 17px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10)}
+  .chip b{color:#e8973a}
+  .foot{margin-top:26px;display:flex;align-items:flex-end;justify-content:space-between}
+  .foot .src{font-size:16px;color:#737a81}.foot .src b{color:#cdd3d9}
+  .brand{text-align:right}.brand .name{font-size:24px;font-weight:800;color:#f1ece2}.brand .tag{margin-top:6px;font-size:14px;letter-spacing:4px;color:#737a81}
+</style></head>
+<body><div class="card"><div class="layer">
+  <div class="eyebrow mono">tracker-mcp-hub · open source</div>
+  <h1>One contract across<br>every <span class="amber">production tracker</span>.</h1>
+  <p class="sub">ShotGrid, ftrack and Kitsu each speak the <b>same normalized snapshot</b> — so one hub can <b>verify, migrate, audit & back up</b> projects across all of them.</p>
+  <div class="flow">
+    <div class="stack">
+      <div class="pill">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div>
+    </div>
+    <div class="arrow">&rarr;</div>
+    <div class="hub">project_summary</div>
+    <div class="arrow">&rarr;</div>
+    <div class="hub" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
+  </div>
+  <div class="spacer"></div>
+  <div class="chips">
+    <span class="chip"><b>verify</b></span><span class="chip"><b>migrate</b></span>
+    <span class="chip"><b>audit</b></span><span class="chip"><b>snapshot</b></span>
+    <span class="chip"><b>rollup</b></span><span class="chip">MIT</span>
+  </div>
+  <div class="foot">
+    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b> · built on the tracker-MCP trio</div>
+    <div class="brand"><div class="name">Alienrobot</div><div class="tag mono">VFX · PIPELINE · AI</div></div>
+  </div>
+</div></div></body></html>
