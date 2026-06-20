@@ -5,14 +5,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Geist+Mono:wght@400..700&family=Instrument+Sans:wght@400..700&display=swap');
-  :root{--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",system-ui,sans-serif;--font-mono:"Geist Mono",ui-monospace,Menlo,monospace}
+  :root{--r1:#E9A14B;--font-display:"Bricolage Grotesque",sans-serif;--font-body:"Instrument Sans",system-ui,sans-serif;--font-mono:"Geist Mono",ui-monospace,Menlo,monospace}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:var(--font-body);background:#0e1013;color:#cfd4da;line-height:1.6;
        background-image:linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:150px 100%}
   .mono{font-family:var(--font-mono)}
-  .amber{color:#e8973a}
+  .amber{color:#E9A14B}
   .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
-  a{color:#e8973a;text-decoration:none}a:hover{text-decoration:underline}
+  a{color:#E9A14B;text-decoration:none}a:hover{text-decoration:underline}
 
   header{padding:46px 0 8px;text-align:center}
   header img{width:100%;max-width:1000px;border-radius:18px;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 70px rgba(0,0,0,.45)}
@@ -27,13 +27,13 @@
 
   .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .card{border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.035);padding:26px 26px}
-  .card .k{font-family:var(--font-mono);font-weight:700;font-size:20px;color:#e8973a}
+  .card .k{font-family:var(--font-mono);font-weight:700;font-size:20px;color:#E9A14B}
   .card .d{margin-top:9px;font-size:17px;color:#9aa1a8}
   .card.span{grid-column:1 / -1}
 
   pre{margin-top:10px;background:#0a0c0f;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px 24px;
       overflow:auto;font-family:var(--font-mono);font-size:14.5px;line-height:1.7;color:#9aa1a8}
-  pre b{color:#e8973a;font-weight:700} pre .g{color:#57c1cb} pre .dim{color:#5c636b}
+  pre b{color:#E9A14B;font-weight:700} pre .g{color:#57c1cb} pre .dim{color:#5c636b}
 
   .flowbox{border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03);
            padding:30px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
@@ -47,7 +47,7 @@
   footer .src{font-size:15px;color:#737a81}footer .src b{color:#cdd3d9}
   .brand .name{font-size:22px;font-weight:800;color:#f1ece2;text-align:right}
   .brand .tag{margin-top:5px;font-size:13px;letter-spacing:4px;color:#737a81;text-align:right}
-</style></head>
+.invader{width:26px;height:auto;color:var(--r1)}.nm{display:flex;align-items:center;justify-content:flex-end;gap:9px}</style></head>
 <body>
 <header><div class="wrap"><img src="hero.png" alt="tracker-mcp-hub — one contract across every production tracker"></div></header>
 
@@ -96,7 +96,7 @@
 
   <footer>
     <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b><br>open source · MIT · built on the tracker-MCP trio</div>
-    <div class="brand"><div class="name">Alienrobot</div><div class="tag mono">VFX · PIPELINE · AI</div></div>
+    <div class="brand"><div class="nm"><svg class="invader" viewBox="0 0 11 8" shape-rendering="crispEdges" fill="currentColor"><rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/></svg><span class="name">Alienrobot</span></div><div class="tag mono">VFX · PIPELINE · AI</div></div>
   </footer>
 </div>
 </body></html>
