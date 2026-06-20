@@ -58,6 +58,15 @@ reference edge (other edges = add a `read_`/`write_` per tracker). Media carry (
 by the tracker MCPs' media tools; the migrate reference copies structure + statuses + casting and reports any
 media-coverage gap. MIT.
 
+## Docs
+
+📊 **[`COMPARISON.md`](COMPARISON.md)** — side-by-side of the three trackers (data model, status vocabularies)
+and the **migration incompatibilities** to know about (casting can't round-trip through ftrack; statuses must
+be mapped; heavy publish bytes stay on storage).
+
+🧪 **[`TESTING.md`](TESTING.md)** — how the trio is validated: live round-trip tests, two-level dry-run checks,
+and the cross-tracker migration matrix, with what is *not* yet covered stated plainly.
+
 ---
 
 Built by **John Huikku** · [alienrobot.com](https://alienrobot.com)
