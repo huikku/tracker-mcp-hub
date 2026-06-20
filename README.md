@@ -1,5 +1,7 @@
 # tracker-mcp-hub
 
+![tracker-mcp-hub — one contract across every production tracker](web/hero.png)
+
 A **tracker-agnostic production-data layer** built on top of the tracker-MCP trio
 ([`shotgrid-mcp`](https://github.com/huikku/shotgrid-mcp) · [`ftrack-mcp`](https://github.com/huikku/ftrack-mcp) ·
 [`kitsu-mcp`](https://github.com/huikku/kitsu-mcp)).
