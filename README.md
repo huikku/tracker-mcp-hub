@@ -44,8 +44,8 @@ And an orchestrated `migrate` of a slice ended with **VERIFY: PASS** (all counts
 shotgrid-mcp ─┐
 ftrack-mcp  ──┤
 kitsu-mcp   ──┤  project_summary  (one normalized contract)
-ayon-mcp    ─┘        │
-                      ▼
+ayon-mcp     ─┘        │
+                       ▼
               tracker-mcp-hub  →  verify · audit · rollup · snapshot · migrate
 ```
 
