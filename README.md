@@ -2,13 +2,14 @@
 
 ![tracker-mcp-hub — one contract across every production tracker](web/hero.png)
 
-A **tracker-agnostic production-data layer** built on top of the tracker-MCP quartet
+A **tracker-agnostic production-data layer** built on top of the tracker-MCP quintet
 ([`shotgrid-mcp`](https://github.com/huikku/shotgrid-mcp) · [`ftrack-mcp`](https://github.com/huikku/ftrack-mcp) ·
-[`kitsu-mcp`](https://github.com/huikku/kitsu-mcp) · [`ayon-mcp`](https://github.com/huikku/ayon-mcp)).
+[`kitsu-mcp`](https://github.com/huikku/kitsu-mcp) · [`ayon-mcp`](https://github.com/huikku/ayon-mcp) ·
+[`nim-mcp`](https://github.com/huikku/nim-mcp)).
 
 Each tracker MCP emits the **same normalized snapshot** (`project_summary`). The hub consumes that one
 contract to do things no single tracker can: **verify, migrate, audit, snapshot/restore, and roll up** —
-across ShotGrid, ftrack, Kitsu and AYON interchangeably.
+across ShotGrid, ftrack, Kitsu, AYON and NIM interchangeably.
 
 > The hub is mostly **pure** — `verify` / `audit` / `rollup` / `snapshot` operate only on the normalized
 > JSON and need no tracker SDK. Only `migrate` (write) touches the tracker MCPs.
@@ -43,13 +44,14 @@ And an orchestrated `migrate` of a slice ended with **VERIFY: PASS** (all counts
 ```
 shotgrid-mcp ─┐
 ftrack-mcp  ──┤
-kitsu-mcp   ──┤  project_summary  (one normalized contract)
-ayon-mcp     ─┘        │
+kitsu-mcp   ──┤
+ayon-mcp    ──┤  project_summary  (one normalized contract)
+nim-mcp      ─┘        │
                        ▼
               tracker-mcp-hub  →  verify · audit · rollup · snapshot · migrate
 ```
 
-Four standalone, single-purpose tracker MCPs (published & credited) + one hub that turns the uniform
+Five standalone, single-purpose tracker MCPs (published & credited) + one hub that turns the uniform
 contract into cross-tracker products. Adding a tracker = a new MCP that emits `project_summary`; everything
 in the hub works on it for free.
 
@@ -65,7 +67,7 @@ media-coverage gap. MIT.
 and the **migration incompatibilities** to know about (casting can't round-trip through ftrack; statuses must
 be mapped; heavy publish bytes stay on storage).
 
-🧪 **[`TESTING.md`](TESTING.md)** — how the quartet is validated: live round-trip tests, two-level dry-run checks,
+🧪 **[`TESTING.md`](TESTING.md)** — how the quintet is validated: live round-trip tests, two-level dry-run checks,
 and the cross-tracker migration matrix, with what is *not* yet covered stated plainly.
 
 ---
