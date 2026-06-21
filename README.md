@@ -8,7 +8,7 @@ A **tracker-agnostic production-data layer** built on top of the tracker-MCP qua
 
 Each tracker MCP emits the **same normalized snapshot** (`project_summary`). The hub consumes that one
 contract to do things no single tracker can: **verify, migrate, audit, snapshot/restore, and roll up** —
-across ShotGrid, ftrack and Kitsu interchangeably.
+across ShotGrid, ftrack, Kitsu and AYON interchangeably.
 
 > The hub is mostly **pure** — `verify` / `audit` / `rollup` / `snapshot` operate only on the normalized
 > JSON and need no tracker SDK. Only `migrate` (write) touches the tracker MCPs.
@@ -42,13 +42,14 @@ And an orchestrated `migrate` of a slice ended with **VERIFY: PASS** (all counts
 
 ```
 shotgrid-mcp ─┐
-ftrack-mcp  ──┤  project_summary  (one normalized contract)
-kitsu-mcp   ─┘        │
+ftrack-mcp  ──┤
+kitsu-mcp   ──┤  project_summary  (one normalized contract)
+ayon-mcp    ─┘        │
                       ▼
               tracker-mcp-hub  →  verify · audit · rollup · snapshot · migrate
 ```
 
-Three standalone, single-purpose tracker MCPs (published & credited) + one hub that turns the uniform
+Four standalone, single-purpose tracker MCPs (published & credited) + one hub that turns the uniform
 contract into cross-tracker products. Adding a tracker = a new MCP that emits `project_summary`; everything
 in the hub works on it for free.
 

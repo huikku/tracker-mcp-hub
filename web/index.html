@@ -55,11 +55,12 @@
 <div class="wrap">
   <p class="lede"><b>tracker-mcp-hub</b> is a tracker-agnostic production-data layer. Each tracker MCP emits the
     <b>same normalized snapshot</b>, and the hub turns that one contract into things no single tracker can do —
-    <b>verify, migrate, audit, snapshot and roll up</b> across ShotGrid, ftrack and Kitsu interchangeably.</p>
+    <b>verify, migrate, audit, snapshot and roll up</b> across ShotGrid, ftrack, Kitsu and AYON interchangeably.</p>
   <div class="repos">
     <a class="r" href="https://github.com/huikku/shotgrid-mcp">shotgrid-mcp</a>
     <a class="r" href="https://github.com/huikku/ftrack-mcp">ftrack-mcp</a>
     <a class="r" href="https://github.com/huikku/kitsu-mcp">kitsu-mcp</a>
+    <a class="r" href="https://github.com/huikku/ayon-mcp">ayon-mcp</a>
   </div>
 
   <h2>Capabilities</h2>
@@ -73,7 +74,7 @@
   </div>
 
   <h2>Proven live</h2>
-  <div class="h2sub">Pointed at the same project copied to all three trackers</div>
+  <div class="h2sub">Pointed at the same project copied to all three of the original trackers</div>
   <pre><span class="dim"># audit: ShotGrid (source of truth)  vs  its mirror copies</span>
 <span class="g">kitsu</span>  copy   tasks <b>&minus;53</b>
 <span class="g">ftrack</span> copy   tasks <b>&minus;8</b>  ·  status mismatches <b>615</b>  ·  casting mismatches <b>357</b>
@@ -83,9 +84,9 @@
 <span class="dim"># and an orchestrated migrate of a slice ended with:</span>   VERIFY <b>PASS</b>  <span class="dim">(all counts matched)</span></pre>
 
   <h2>Architecture</h2>
-  <div class="h2sub">Three standalone MCPs + one hub</div>
+  <div class="h2sub">Four standalone MCPs + one hub</div>
   <div class="flowbox">
-    <div class="stack"><div class="pill">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div></div>
+    <div class="stack"><div class="pill">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div><div class="pill">AYON</div></div>
     <div class="arrow">&rarr;</div>
     <div class="hubp mono">project_summary</div>
     <div class="arrow">&rarr;</div>
