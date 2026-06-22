@@ -92,13 +92,13 @@
   <h2>Architecture</h2>
   <div class="h2sub">Five standalone MCPs + one hub</div>
   <div class="flowbox">
-    <div class="stack"><div class="pill">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div><div class="pill">AYON</div><div class="pill" style="grid-column:1/-1">NIM</div></div>
+    <div class="stack"><div class="pill" style="grid-column:1/-1">ShotGrid</div><div class="pill">ftrack</div><div class="pill">Kitsu</div><div class="pill">AYON</div><div class="pill">NIM</div></div>
     <div class="arrow">&rarr;</div>
     <div class="hubp mono">project_summary</div>
     <div class="arrow">&rarr;</div>
     <div class="hubp mono" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
     <div class="arrow">&rarr;</div>
-    <div class="stack"><div class="cap">verify</div><div class="cap">migrate</div><div class="cap">audit</div><div class="cap">snapshot</div><div class="cap" style="grid-column:1/-1">rollup</div></div>
+    <div class="stack"><div class="cap" style="grid-column:1/-1">verify</div><div class="cap">migrate</div><div class="cap">audit</div><div class="cap">snapshot</div><div class="cap">rollup</div></div>
   </div>
   <p style="margin-top:16px;color:#737a81;font-size:16px">Adding a tracker = a new MCP that emits <span class="mono amber">project_summary</span>; every hub tool works on it for free. The hub is mostly pure — <span class="mono">verify&nbsp;/&nbsp;audit&nbsp;/&nbsp;rollup&nbsp;/&nbsp;snapshot</span> need no tracker SDK.</p>
 
