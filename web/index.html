@@ -40,6 +40,7 @@
            padding:30px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
   .stack{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .pill{font-size:16px;font-weight:700;color:#dfe4e9;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);text-align:center;min-width:120px}
+  .cap{font-family:var(--font-mono);font-size:14px;font-weight:700;color:#E9A14B;padding:10px 16px;border-radius:10px;background:rgba(233,161,75,.08);border:1px solid rgba(233,161,75,.24);text-align:center;min-width:112px}
   .arrow{color:#5c636b;font-size:26px}
   .hubp{font-family:var(--font-mono);font-weight:700;color:#1b1205;background:linear-gradient(180deg,#eaa64a,#e2883a);padding:14px 20px;border-radius:12px;box-shadow:0 14px 34px rgba(232,151,58,.28)}
   .caps{display:flex;flex-direction:column;gap:8px}
@@ -75,13 +76,17 @@
   </div>
 
   <h2>Proven live</h2>
-  <div class="h2sub">Pointed at the same project copied to all three of the original trackers</div>
-  <pre><span class="dim"># audit: ShotGrid (source of truth)  vs  its mirror copies</span>
-<span class="g">kitsu</span>  copy   tasks <b>&minus;53</b>
-<span class="g">ftrack</span> copy   tasks <b>&minus;8</b>  ·  status mismatches <b>615</b>  ·  casting mismatches <b>357</b>
-              assets missing <b>1</b> (Farmhouse)  /  extra <b>2</b> (Farmhouse&nbsp;(2), Branch&nbsp;(2))   <span class="dim">&larr; ftrack name-collisions</span>
+  <div class="h2sub">Five real projects from five trackers — diffed and absorbed through one contract</div>
+  <pre><span class="dim"># absorb: one importer over the normalized contract  →  one schema</span>
+<span class="g">shotgrid</span> Big Buck Bunny    shots <b>300</b>    assets <b>100</b>   tasks <b>1,500</b>
+<span class="g">ftrack</span>   sync (VFX demo)   shots <b>4</b>      assets <b>1</b>     tasks <b>20</b>
+<span class="g">kitsu</span>    NIGHTJAR feature  shots <b>1,200</b>  assets <b>80</b>    tasks <b>8,423</b>
+<span class="g">ayon</span>     demo_Commercial   shots <b>29</b>     assets <b>18</b>    tasks <b>193</b>
+<span class="g">nim</span>      demo_Commercial   shots <b>29</b>     assets <b>18</b>    tasks <b>190</b>
+                                   <b>5 projects → 1,562 shots · 217 assets · 10,326 tasks, one schema</b>
 
-<span class="dim"># every finding is a documented cross-tracker incompatibility — surfaced automatically.</span>
+<span class="dim"># audit: ShotGrid (source of truth) vs its mirror copies — every delta surfaced automatically</span>
+<span class="g">kitsu</span> copy  tasks <b>&minus;53</b>   ·   <span class="g">ftrack</span> copy  status mismatches <b>615</b>  ·  casting <b>357</b>
 <span class="dim"># and an orchestrated migrate of a slice ended with:</span>   VERIFY <b>PASS</b>  <span class="dim">(all counts matched)</span></pre>
 
   <h2>Architecture</h2>
@@ -91,14 +96,14 @@
     <div class="arrow">&rarr;</div>
     <div class="hubp mono">project_summary</div>
     <div class="arrow">&rarr;</div>
-    <div class="caps">
-      <div class="hubp mono" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
-    </div>
+    <div class="hubp mono" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
+    <div class="arrow">&rarr;</div>
+    <div class="stack"><div class="cap">verify</div><div class="cap">migrate</div><div class="cap">audit</div><div class="cap">snapshot</div><div class="cap" style="grid-column:1/-1">rollup</div></div>
   </div>
   <p style="margin-top:16px;color:#737a81;font-size:16px">Adding a tracker = a new MCP that emits <span class="mono amber">project_summary</span>; every hub tool works on it for free. The hub is mostly pure — <span class="mono">verify&nbsp;/&nbsp;audit&nbsp;/&nbsp;rollup&nbsp;/&nbsp;snapshot</span> need no tracker SDK.</p>
 
   <footer>
-    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b><br>open source · MIT · built on the tracker-MCP trio</div>
+    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b><br>open source · MIT · built on the tracker-MCP quintet</div>
     <div class="brand"><div class="nm"><svg class="invader" viewBox="0 0 11 8" shape-rendering="crispEdges" fill="currentColor"><rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/></svg><a class="name" href="https://alienrobot.com">Alienrobot</a></div><div class="tag mono">John Huikku · <a href="https://alienrobot.com">alienrobot.com</a></div></div>
   </footer>
 </div>

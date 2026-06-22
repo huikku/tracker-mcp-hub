@@ -19,7 +19,8 @@
   .sub b{color:#cdd3d9;font-weight:600}
   .flow{margin-top:30px;display:flex;align-items:center;gap:18px}
   .stack{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-  .pill{font-size:18px;font-weight:700;color:#dfe4e9;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);text-align:center}
+  .pill{font-size:18px;font-weight:700;color:#dfe4e9;padding:10px 16px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);text-align:center;min-width:122px}
+  .cap{font-family:var(--font-mono);font-size:16px;font-weight:700;color:#E9A14B;padding:11px 16px;border-radius:10px;background:rgba(233,161,75,.08);border:1px solid rgba(233,161,75,.24);text-align:center;min-width:118px}
   .arrow{color:#5c636b;font-size:30px}
   .hub{font-family:var(--font-mono);font-weight:700;font-size:21px;color:#1b1205;background:linear-gradient(180deg,#eaa64a,#e2883a);padding:16px 22px;border-radius:14px;box-shadow:0 18px 40px rgba(232,151,58,.30)}
   .spacer{flex:1}
@@ -42,15 +43,14 @@
     <div class="hub">project_summary</div>
     <div class="arrow">&rarr;</div>
     <div class="hub" style="background:rgba(255,255,255,.05);color:#eee8dd;border:1px solid rgba(255,255,255,.10);box-shadow:none">the&nbsp;hub</div>
+    <div class="arrow">&rarr;</div>
+    <div class="stack">
+      <div class="cap">verify</div><div class="cap">migrate</div><div class="cap">audit</div><div class="cap">snapshot</div><div class="cap" style="grid-column:1/-1">rollup</div>
+    </div>
   </div>
   <div class="spacer"></div>
-  <div class="chips">
-    <span class="chip"><b>verify</b></span><span class="chip"><b>migrate</b></span>
-    <span class="chip"><b>audit</b></span><span class="chip"><b>snapshot</b></span>
-    <span class="chip"><b>rollup</b></span><span class="chip">MIT</span>
-  </div>
   <div class="foot">
-    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b> · built on the tracker-MCP quintet</div>
+    <div class="src mono">plan &rarr; migrate &rarr; <b>verify</b> · MIT · built on the tracker-MCP quintet</div>
     <div class="brand"><div class="nm"><svg class="invader" viewBox="0 0 11 8" shape-rendering="crispEdges" fill="currentColor"><rect x="2" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="7" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="5" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="7" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="5" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="9" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="5" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="7" y="4" width="1" height="1"/><rect x="8" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="2" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="4" y="5" width="1" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="4" y="7" width="1" height="1"/><rect x="6" y="7" width="1" height="1"/><rect x="7" y="7" width="1" height="1"/></svg><span class="name">Alienrobot</span></div><div class="tag mono">John Huikku · alienrobot.com</div></div>
   </div>
 </div></div></body></html>
